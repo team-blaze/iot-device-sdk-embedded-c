@@ -28,6 +28,10 @@ CONFIG_ZEPHYR_MAX          =memory_fs-posix_platform-tls_bsp-memory_limiter
 CONFIG_DUMMY_MAX           =memory_fs-memory_limiter
 CONFIG_DUMMY_MIN           =memory_fs
 
+# CONFIG for BILSV3
+# no tls and no fs
+CONFIG_BILSV3			   =tls_socket-dummy_fs
+
 # TARGET presets
 TARGET_STATIC_DEV          =-static-debug
 TARGET_STATIC_REL          =-static-release
@@ -103,6 +107,21 @@ else ifeq ($(PRESET), ARM_REL)
     TARGET = $(TARGET_STATIC_REL)
     IOTC_BSP_PLATFORM = dummy
     IOTC_TARGET_PLATFORM = arm-linux
+
+# -------------------------------------------------------
+#bilsv
+else ifeq ($(PRESET), BILSV3_DEL)
+	CONFIG = $(CONFIG_BILSV3)
+    TARGET = $(TARGET_STATIC_DEV)
+    IOTC_BSP_PLATFORM = bilsv
+    IOTC_TARGET_PLATFORM = bilsv
+	IOTC_BSP_TLS =
+else ifeq ($(PRESET), BILSV3_REL)
+	CONFIG = $(CONFIG_BILSV3)
+	TARGET = $(TARGET_STATIC_REL)
+	IOTC_BSP_PLATFORM = bilsv
+	IOTC_TARGET_PLATFORM = bilsv
+	IOTC_BSP_TLS =
 
 # -------------------------------------------------------
 # Fuzz Tests
