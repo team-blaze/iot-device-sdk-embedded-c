@@ -5,16 +5,6 @@ AR = arm-none-eabi-ar
 
 IOTC_FREERTOS_DIR_PATH=$(LIBIOTC)/../../bike.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/
 
-# IOTC_SOURCES += $(IOTC_FREERTOS_DIR_PATH)/Source/list.c
-# IOTC_SOURCES += $(IOTC_FREERTOS_DIR_PATH)/Source/queue.c
-# IOTC_SOURCES += $(IOTC_FREERTOS_DIR_PATH)/Source/tasks.c
-# IOTC_SOURCES += $(IOTC_FREERTOS_DIR_PATH)/Source/timers.c
-# IOTC_SOURCES += $(IOTC_FREERTOS_DIR_PATH)/Source/croutine.c
-# IOTC_SOURCES += $(IOTC_FREERTOS_DIR_PATH)/Source/event_groups.c
-# IOTC_SOURCES += $(IOTC_FREERTOS_DIR_PATH)/Source/stream_buffers.c
-# IOTC_SOURCES += $(IOTC_FREERTOS_DIR_PATH)/Source/portable/MemMang/heap_4.c
-# IOTC_SOURCES += $(IOTC_FREERTOS_DIR_PATH)/Source/portable/GCC/CM4F/port.c
-
 IOTC_FREERTOS_DIR_INCLUDES = -I$(IOTC_FREERTOS_DIR_PATH)/Source/include/
 IOTC_FREERTOS_DIR_INCLUDES += -I$(IOTC_FREERTOS_DIR_PATH)/Source/portable/GCC/CM4F/
 
