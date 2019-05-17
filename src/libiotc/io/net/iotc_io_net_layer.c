@@ -28,6 +28,16 @@
 #include "iotc_globals.h"
 #include "iotc_io_timeouts.h"
 
+#include "printf_enable.h"
+#if ( TEST ) || (ENABLE_BSP)
+    #include <stdio.h>
+    #include <inttypes.h>
+    #define PRINTF(...) printf(__VA_ARGS__)
+#else
+    #define PRINTF(...)
+#endif
+
+
 iotc_state_t iotc_io_net_layer_connect(void* context, void* data,
                                        iotc_state_t in_out_state) {
   IOTC_LAYER_FUNCTION_PRINT_FUNCTION_DIGEST();

@@ -50,8 +50,8 @@ static iotc_bsp_crypto_state_t _iotc_create_iotcore_jwt_b64h_b64p(
 
   char payload[IOTC_JWT_PAYLOAD_BUF_SIZE] = {0};
   snprintf(payload, IOTC_JWT_PAYLOAD_BUF_SIZE,
-           "{\"iat\":%lld,\"exp\":%lld,\"aud\":\"%s\"}", current_time_in_sec,
-           current_time_in_sec + expiration_period_sec, project_id);
+           "{\"iat\":%d,\"exp\":%d,\"aud\":\"%s\"}", (int)current_time_in_sec,
+           (int)(current_time_in_sec + expiration_period_sec), project_id);
 
   // base64 encode, header
   *bytes_written = 0;
