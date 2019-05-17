@@ -50,21 +50,21 @@ void iotc_debug_data_logger_impl(const char* msg,
 
 #define iotc_debug_logger(msg)                                               \
   __iotc_printf(                                                             \
-      "[%lld][%s:%d (%s)] %s\n", iotc_bsp_time_getcurrenttime_milliseconds(), \
+      "[%d][%s:%d (%s)] %s\n", (int32_t)iotc_bsp_time_getcurrenttime_milliseconds(), \
       iotc_debug_dont_print_the_path(__FILE__), __LINE__, __func__, msg)
 #define iotc_debug_format(fmt, ...)                                           \
-  __iotc_printf("[%lld][%s:%d (%s)] " fmt "\n",                                \
-                iotc_bsp_time_getcurrenttime_milliseconds(),                  \
+  __iotc_printf("[%d][%s:%d (%s)] " fmt "\n",                                \
+                (int32_t)iotc_bsp_time_getcurrenttime_milliseconds(),                  \
                 iotc_debug_dont_print_the_path(__FILE__), __LINE__, __func__, \
                 __VA_ARGS__)
 #define iotc_debug_printf(...) __iotc_printf(__VA_ARGS__)
 #define iotc_debug_function_entered()                        \
-  __iotc_printf("[%lld][%s:%d (%s)] -> entered\n",            \
-                iotc_bsp_time_getcurrenttime_milliseconds(), \
+  __iotc_printf("[%d][%s:%d (%s)] -> entered\n",            \
+                (int32_t)iotc_bsp_time_getcurrenttime_milliseconds(), \
                 iotc_debug_dont_print_the_path(__FILE__), __LINE__, __func__)
 #define iotc_debug_data_logger(msg, dsc)                                       \
-  __iotc_printf("[%lld][%s:%d (%s)] #\n",                                       \
-                iotc_bsp_time_getcurrenttime_milliseconds(),                   \
+  __iotc_printf("[%d][%s:%d (%s)] #\n",                                       \
+                (int32_t)iotc_bsp_time_getcurrenttime_milliseconds(),                   \
                 iotc_debug_dont_print_the_path(__FILE__), __LINE__, __func__); \
   iotc_debug_data_logger_impl(msg, dsc)
 #else /* IOTC_DEBUG_OUTPUT */
@@ -78,10 +78,10 @@ void iotc_debug_data_logger_impl(const char* msg,
 #define IOTC_LAYER_FUNCTION_PRINT_FUNCTION_DIGEST()
 #define IOTC_LAYER_FUNCTION_PRINT_FUNCTION_DIGEST_OFF()      \
   __iotc_printf(                                             \
-      "[%lld] %-50s, layerchainid = %p, in_out_state = %d, "  \
+      "[%d] %-50s, layerchainid = %p, in_out_state = %d, "  \
       "layer_type_id = "                                     \
       "%d, data = %p\n",                                     \
-      iotc_bsp_time_getcurrenttime_milliseconds(), __func__, \
+      (int32_t)iotc_bsp_time_getcurrenttime_milliseconds(), __func__, \
       IOTC_THIS_LAYER(context)->context_data, in_out_state,  \
       IOTC_THIS_LAYER(context)->layer_type_id, data)
 
