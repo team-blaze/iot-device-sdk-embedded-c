@@ -30,7 +30,7 @@ CONFIG_DUMMY_MIN           =memory_fs
 
 # CONFIG for BILSV3
 # no tls and no fs
-CONFIG_BILSV3			   =tls_socket-dummy_fs
+CONFIG_BILSV3			   =tls_socket-dummy_fs-memory_limiter
 
 # TARGET presets
 TARGET_STATIC_DEV          =-static-debug
