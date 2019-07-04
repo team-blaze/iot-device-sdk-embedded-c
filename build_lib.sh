@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 print_help_exit() {
     echo "Usage: "$0" debug|release [rtos||bare]"
@@ -17,7 +18,6 @@ copy_all_files() {
 copy_freertos_files() {
     # will overwrite the previous copied files
     cp ../bilsv3-libraries/internal/iotc_bsp/iotc_bsp_mem_freertos.c src/bsp/platform/bilsv/iotc_bsp_mem_bilsv.c
-    cp ../bilsv3-libraries/internal/iotc_bsp/iotc_bsp_io_net_freertos.c src/bsp/platform/bilsv/iotc_bsp_io_net_bilsv.c
 }
 
 # Wipe the folder clean to avoid clashing FreeRTOS with non-FreeRTOS c files from previous run
