@@ -18,7 +18,7 @@
 #define __IOTC_CONFIG_H__
 
 #ifndef IOTC_IO_BUFFER_SIZE
-#define IOTC_IO_BUFFER_SIZE 32
+#define IOTC_IO_BUFFER_SIZE 256
 #endif
 
 #ifndef IOTC_BACKOFF_CHECK_TIME
@@ -34,7 +34,7 @@
 #endif
 
 #ifndef IOTC_MAX_IDLE_TIMEOUT
-#define IOTC_MAX_IDLE_TIMEOUT 5
+#define IOTC_MAX_IDLE_TIMEOUT 0
 #endif
 
 #ifndef IOTC_MQTT_PORT
@@ -44,7 +44,7 @@
 
 #ifndef IOTC_MQTT_HOST
 #define IOTC_MQTT_HOST \
-  { "mqtt.2030.ltsapis.goog", IOTC_MQTT_PORT }
+  { "mqtt.googleapis.com", IOTC_MQTT_PORT }
 #endif
 
 #endif /* __IOTC_CONFIG_H__ */

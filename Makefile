@@ -124,7 +124,6 @@ clean:
 	$(RM) -rf \
 		$(IOTC_BINDIR) \
 		$(IOTC_OBJDIR)
-	$(MAKE) -C $(IOTC_TLS_LIB_SRC_DIR) clean
 
 clean_all: clean
 	$(RM) -rf \
