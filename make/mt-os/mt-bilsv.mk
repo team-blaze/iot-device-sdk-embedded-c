@@ -11,7 +11,7 @@ IOTC_FREERTOS_DIR_INCLUDES += -I$(IOTC_FREERTOS_DIR_PATH)/Source/portable/GCC/CM
 MY_BUILD_PROJECT_PATH=$(LIBIOTC)/../../bike.cydsn
 CRYPTO_AUTH_LIB_PATH=$(LIBIOTC)/third_party/cryptoauthlib/lib
 INTERNAL_LIB_PATH=$(LIBIOTC)/../bilsv3-libraries/internal
-PROTOBUF_LIB_PATH=$(LIBIOTC)/../basis-libraries/messaging/c/output
+PROTOBUF_LIB_PATH=$(LIBIOTC)/../basis-messaging/messaging/c/output
 NANOPB_LIB_PATH=$(LIBIOTC)/../bilsv3-libraries/external/nanopb
 
 #build positional independent code for the library
