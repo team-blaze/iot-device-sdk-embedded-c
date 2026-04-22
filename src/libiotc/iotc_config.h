@@ -18,7 +18,7 @@
 #define __IOTC_CONFIG_H__
 
 #ifndef IOTC_IO_BUFFER_SIZE
-#define IOTC_IO_BUFFER_SIZE 256
+#define IOTC_IO_BUFFER_SIZE 512
 #endif
 
 #ifndef IOTC_BACKOFF_CHECK_TIME
