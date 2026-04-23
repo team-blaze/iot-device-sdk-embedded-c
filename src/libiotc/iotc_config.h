@@ -38,7 +38,7 @@
 #endif
 
 #ifndef IOTC_MQTT_PORT
-#define IOTC_MQTT_PORT 8883
+#define IOTC_MQTT_PORT 443
 /* note: usually port 1883 is used for insecure MQTT connections */
 #endif
 
